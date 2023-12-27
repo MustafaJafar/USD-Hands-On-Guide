@@ -16,13 +16,14 @@ Many thanks to guys at [Ynput](https://ynput.io/) for their inspiration, continu
 I am proud to be part of such a great team and positive community.
 
 ## Table of contents
-
-- [![USD Introduction - Jupyter](https://img.shields.io/static/v1?label=USD+Introduction&message=Jupyter&color=%23F37626&logo=jupyter)](notebooks/USD_Introduction.ipynb)
-- [![USD Beginner Guide - Jupyter](https://img.shields.io/static/v1?label=USD+Beginner+Guide&message=Jupyter&color=%23F37626&logo=jupyter)](notebooks/USD_Beginner_Guide.ipynb)
-- [![USD Asset Structure - Jupyter](https://img.shields.io/static/v1?label=USD+Asset+Structure+|+USDA&message=Jupyter&color=%23F37626&logo=jupyter)](notebooks/USD_Asset_Structure.ipynb)
-- [![Build USD Assets With Python 1 - Jupyter](https://img.shields.io/static/v1?label=Build+USD+Asset+With+Python+1&message=Jupyter&color=%23F37626&logo=jupyter)](notebooks/Build_Assets_With_Python_1.ipynb)
-- [![Build USD Assets With Python 2 - Jupyter](https://img.shields.io/static/v1?label=Build+USD+Asset+With+Python+2&message=Jupyter&color=%23F37626&logo=jupyter)](notebooks/Build_Assets_With_Python_2.ipynb) 
-- [![USD Asset Production Scenarios - Jupyter](https://img.shields.io/static/v1?label=USD+Asset+Production+Scenarios&message=Jupyter&color=%23F37626&logo=jupyter)](notebooks/USD_Asset_Production_Scenarios.ipynb)
+| Notebook | Google Colab link|
+| -- | -- |
+| [![USD Introduction - open in github](https://img.shields.io/badge/USD_Introduction-open_in_github-181717?logo=jupyter)](notebooks/USD_Introduction.ipynb) | [![USD Introduction - open in colab](https://img.shields.io/badge/USD_Introduction-open_in_colab-F37626?logo=googlecolab)](https://colab.research.google.com/github/MustafaJafar/USD-Hands-On-Guide/blob/main/notebooks/USD_Introduction.ipynb) |
+| [![USD Beginner Guide - open in github](https://img.shields.io/badge/USD_Beginner_Guide-open_in_github-181717?logo=jupyter)](notebooks/USD_Beginner_Guide.ipynb) | [![USD Beginner Guide - open in colab](https://img.shields.io/badge/USD_Beginner_Guide-open_in_colab-F37626?logo=googlecolab)](https://colab.research.google.com/github/MustafaJafar/USD-Hands-On-Guide/blob/main/notebooks/USD_Beginner_Guide.ipynb) |
+| [![USD Asset Structure - open in github](https://img.shields.io/badge/USD_Asset_Structure-open_in_github-181717?logo=jupyter)](notebooks/USD_Asset_Structure.ipynb) | [![USD Asset Structure - open in colab](https://img.shields.io/badge/USD_Asset_Structure-open_in_colab-F37626?logo=googlecolab)](https://colab.research.google.com/github/MustafaJafar/USD-Hands-On-Guide/blob/main/notebooks/USD_Asset_Structure.ipynb) |
+| [![USD USD Assets With Python 1 - open in github](https://img.shields.io/badge/Build_Assets_With_Python_1-open_in_github-181717?logo=jupyter)](notebooks/Build_Assets_With_Python_1.ipynb) | [![USD USD Assets With Python 1 - open in colab](https://img.shields.io/badge/Build_Assets_With_Python_1-open_in_colab-F37626?logo=googlecolab)](https://colab.research.google.com/github/MustafaJafar/USD-Hands-On-Guide/blob/main/notebooks/Build_Assets_With_Python_1.ipynb) |
+| [![USD USD Assets With Python 2 - open in github](https://img.shields.io/badge/Build_Assets_With_Python_2-open_in_github-181717?logo=jupyter)](notebooks/Build_Assets_With_Python_2.ipynb) | [![USD USD Assets With Python 2 - open in colab](https://img.shields.io/badge/Build_Assets_With_Python_2-open_in_colab-F37626?logo=googlecolab)](https://colab.research.google.com/github/MustafaJafar/USD-Hands-On-Guide/blob/main/notebooks/Build_Assets_With_Python_2.ipynb) |
+| [![USD USD Production Scenarios - open in github](https://img.shields.io/badge/USD_Asset_Production_Scenarios-open_in_github-181717?logo=jupyter)](notebooks/USD_Asset_Production_Scenarios.ipynb) | [![USD USD Production Scenarios - open in colab](https://img.shields.io/badge/USD_Asset_Production_Scenarios-open_in_colab-F37626?logo=googlecolab)](https://colab.research.google.com/github/MustafaJafar/USD-Hands-On-Guide/blob/main/notebooks/USD_Asset_Production_Scenarios.ipynb) |
 
 ## Environment preparation: 
 Below, Here's how I set up my development environment.
