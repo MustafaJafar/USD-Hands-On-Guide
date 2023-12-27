@@ -1,0 +1,10 @@
+#usda 1.0
+
+# you can't sublayer the same layer twice (I can't add 'a_cube.usda' twice!).
+# These layers order don't matter as they won't affect each other as both have different Prims!
+(
+    subLayers = [
+        @./a_cube.usda@,
+        @./a_sphere.usda@
+    ]
+)

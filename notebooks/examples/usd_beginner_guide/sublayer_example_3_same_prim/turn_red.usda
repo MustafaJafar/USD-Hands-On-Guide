@@ -1,0 +1,9 @@
+#usda 1.0
+
+# This layer has no meaning on its own, it's supposed to be sublayered.
+over "a_cube"
+{
+    color3f[] primvars:displayColor = [(1, 0, 0)] (
+        interpolation = "constant"
+    )
+}

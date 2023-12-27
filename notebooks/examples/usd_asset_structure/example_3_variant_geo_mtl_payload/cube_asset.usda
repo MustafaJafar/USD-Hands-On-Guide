@@ -1,0 +1,25 @@
+#usda 1.0
+
+def Xform "Cube_Asset" (
+    prepend payload = @./payload.usda@</Cube_Asset>
+
+    # Loft Variant Set
+    variants = {
+        string model = "normal"
+    }
+    prepend variantSets = "model"
+)
+{
+    # Loft Variant options
+    variantSet "model" = {
+        "normal" {
+
+        }
+        "short" {
+
+        }
+        "tall" {
+
+        }
+    }
+}

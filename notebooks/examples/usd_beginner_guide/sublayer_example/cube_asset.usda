@@ -1,0 +1,15 @@
+#usda 1.0
+(
+    endTimeCode = 90
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+    subLayers = [
+        @./animation.usda@,
+        @./lookdev.usda@,
+        @./model.usda@
+    ]
+)
+

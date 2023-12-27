@@ -1,0 +1,9 @@
+#usda 1.0
+
+# we can use sub-layers to author opnions / alter properties.
+(
+    subLayers = [
+        @./turn_red.usda@,
+        @./a_blue_cube.usda@,
+    ]
+)

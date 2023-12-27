@@ -1,0 +1,7 @@
+#usda 1.0
+
+def Sphere "a_sphere"
+{
+    double3 xformOp:translate = (0.0, 1.0, 0.0)
+    uniform token[] xformOpOrder = ["xformOp:translate"]
+}

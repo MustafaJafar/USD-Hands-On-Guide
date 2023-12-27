@@ -1,0 +1,108 @@
+#usda 1.0
+(
+    defaultPrim = "My_Model"
+)
+
+def "My_Model" (
+    prepend references = [
+        </ASSET_model_variant_normal/ASSET>,
+        </ASSET_model_variant_short/ASSET>,
+        </ASSET_model_variant_tall/ASSET>
+    ]
+)
+{
+}
+
+over "ASSET_model_variant_normal" (
+    hidden = true
+)
+{
+    def Xform "ASSET" (
+        variants = {
+            string model = "normal"
+        }
+        prepend variantSets = "model"
+    )
+    {
+        variantSet "model" = {
+            "normal" (
+                kind = "component"
+            ) {
+                custom float3[] extentsHint = [(-1, -1, -1), (1, 1, 1)]
+
+                def Scope "Geo"
+                {
+                    def Cube "Cube"
+                    {
+                        custom float3 xformOp:scale = (1, 1, 1)
+                        uniform token[] xformOpOrder = ["xformOp:scale"]
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+over "ASSET_model_variant_short" (
+    hidden = true
+)
+{
+    def Xform "ASSET" (
+        variants = {
+            string model = "short"
+        }
+        prepend variantSets = "model"
+    )
+    {
+        variantSet "model" = {
+            "short" (
+                kind = "component"
+            ) {
+                custom float3[] extentsHint = [(-1, -0.5, -1), (1, 0.5, 1)]
+
+                def Scope "Geo"
+                {
+                    def Cube "Cube"
+                    {
+                        custom float3 xformOp:scale = (1, 0.5, 1)
+                        uniform token[] xformOpOrder = ["xformOp:scale"]
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+over "ASSET_model_variant_tall" (
+    hidden = true
+)
+{
+    def Xform "ASSET" (
+        variants = {
+            string model = "tall"
+        }
+        prepend variantSets = "model"
+    )
+    {
+        variantSet "model" = {
+            "tall" (
+                kind = "component"
+            ) {
+                custom float3[] extentsHint = [(-1, -2, -1), (1, 2, 1)]
+
+                def Scope "Geo"
+                {
+                    def Cube "Cube"
+                    {
+                        custom float3 xformOp:scale = (1, 2, 1)
+                        uniform token[] xformOpOrder = ["xformOp:scale"]
+                    }
+                }
+
+            }
+        }
+    }
+}
+

@@ -1,0 +1,27 @@
+#usda 1.0
+
+
+over "sphere_01"
+{
+    color3f[] primvars:displayColor = [(0, 1, 0)] (
+        interpolation = "constant"
+    )
+}
+over "sphere_02"
+{
+    color3f[] primvars:displayColor = [(0, 1, 0)] (
+        interpolation = "constant"
+    )
+}
+over "sphere_03"
+{
+    color3f[] primvars:displayColor = [(0, 1, 0)] (
+        interpolation = "constant"
+    )
+}
+over "sphere_04"
+{
+    color3f[] primvars:displayColor = [(0, 1, 0)] (
+        interpolation = "constant"
+    )
+}

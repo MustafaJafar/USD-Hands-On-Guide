@@ -1,0 +1,144 @@
+#usda 1.0
+(
+    defaultPrim = "My_Model"
+)
+
+def "My_Model" (
+    prepend references = [
+        </ASSET_material_variant_red/ASSET>,
+        </ASSET_material_variant_green/ASSET>,
+        </ASSET_material_variant_blue/ASSET>
+    ]
+)
+{
+}
+
+over "ASSET_material_variant_red" (
+    hidden = true
+)
+{
+    def Xform "ASSET" (
+        variants = {
+            string material = "red"
+        }
+        prepend variantSets = "material"
+    )
+    {
+        variantSet "material" = {
+            "red" {
+                def Scope "Mtl"
+                {
+                    def Material "red"
+                    {
+                        token outputs:surface.connect = </ASSET_material_variant_red/ASSET/Mtl/red/redShader.outputs:surface>
+
+                        def Shader "redShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (1, 0, 0)
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                over "Geo"
+                {
+                    over "Cube" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </ASSET_material_variant_red/ASSET/Mtl/red>
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+over "ASSET_material_variant_green" (
+    hidden = true
+)
+{
+    def Xform "ASSET" (
+        variants = {
+            string material = "green"
+        }
+        prepend variantSets = "material"
+    )
+    {
+        variantSet "material" = {
+            "green" {
+                def Scope "Mtl"
+                {
+                    def Material "green"
+                    {
+                        token outputs:surface.connect = </ASSET_material_variant_green/ASSET/Mtl/green/greenShader.outputs:surface>
+
+                        def Shader "greenShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0, 1, 0)
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                over "Geo"
+                {
+                    over "Cube" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </ASSET_material_variant_green/ASSET/Mtl/green>
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+over "ASSET_material_variant_blue" (
+    hidden = true
+)
+{
+    def Xform "ASSET" (
+        variants = {
+            string material = "blue"
+        }
+        prepend variantSets = "material"
+    )
+    {
+        variantSet "material" = {
+            "blue" {
+                def Scope "Mtl"
+                {
+                    def Material "blue"
+                    {
+                        token outputs:surface.connect = </ASSET_material_variant_blue/ASSET/Mtl/blue/blueShader.outputs:surface>
+
+                        def Shader "blueShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0, 0, 1)
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                over "Geo"
+                {
+                    over "Cube" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </ASSET_material_variant_blue/ASSET/Mtl/blue>
+                    }
+                }
+
+            }
+        }
+    }
+}
+

@@ -1,0 +1,374 @@
+#usda 1.0
+(
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Scope "Materials"
+{
+    def Material "Bricks"
+    {
+        token outputs:karma:displacement.connect = </Materials/Bricks/Bricks_displace.outputs:displacement>
+        token outputs:karma:surface.connect = </Materials/Bricks/Bricks_surface.outputs:surface>
+        token outputs:surface.connect = </Materials/Bricks/Bricks_preview.outputs:surface>
+
+        def Shader "Bricks_surface"
+        {
+            uniform token info:implementationSource = "sourceAsset"
+            uniform asset info:sourceAsset = @opdef:/Vop/principledshader::2.0?SurfaceVexCode@
+            float inputs:albedomult (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        float default_value = 1
+                        string ogl_diff_intensity = "1"
+                        string ogl_spec_intensity = "1"
+                    }
+                }
+            )
+            vector3f inputs:basecolor = (1, 1, 1) (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        float3 default_value = (0.2, 0.2, 0.2)
+                        string ogl_diff = "1"
+                        string ogl_spec = "1"
+                    }
+                }
+            )
+            asset inputs:basecolor_texture = @C:/PROGRA~1/SIDEEF~1/HOUDIN~1.403/houdini/pic/texture/bricks001_basecolor.rat@ (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        asset default_value = @@
+                        string ogl_tex1 = "1"
+                    }
+                }
+            )
+            string inputs:basecolor_textureWrap (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        string default_value = "repeat"
+                        string ogl_tex_vwrap1 = "1"
+                        string ogl_tex_wrap1 = "1"
+                    }
+                }
+            )
+            int inputs:basecolor_useTexture = 1 (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        int default_value = 0
+                        string ogl_use_tex1 = "1"
+                    }
+                }
+            )
+            int inputs:basecolor_useTextureAlpha (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        int default_value = 0
+                        string ogl_use_diffuse_map_alpha = "1"
+                    }
+                }
+            )
+            asset inputs:baseNormal_texture (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        asset default_value = @@
+                        string ogl_normalmap = "1"
+                    }
+                }
+            )
+            float inputs:coat (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        float default_value = 0
+                        string ogl_coat_intensity = "1"
+                    }
+                }
+            )
+            asset inputs:coat_texture (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        asset default_value = @@
+                        string ogl_coat_intensity_map = "1"
+                    }
+                }
+            )
+            int inputs:coat_useTexture (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        int default_value = 0
+                        string ogl_use_coat_intensity_map = "1"
+                    }
+                }
+            )
+            float inputs:coatrough (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        float default_value = 0
+                        string ogl_coat_rough = "1"
+                    }
+                }
+            )
+            asset inputs:coatrough_texture (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        asset default_value = @@
+                        string ogl_coat_roughness_map = "1"
+                    }
+                }
+            )
+            int inputs:coatrough_useTexture (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        int default_value = 0
+                        string ogl_use_coat_roughness_map = "1"
+                    }
+                }
+            )
+            vector3f inputs:emitcolor (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        float3 default_value = (1, 1, 1)
+                        string ogl_emit = "1"
+                    }
+                }
+            )
+            asset inputs:emitcolor_texture (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        asset default_value = @@
+                        string ogl_emissionmap = "1"
+                    }
+                }
+            )
+            int inputs:emitcolor_useTexture (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        int default_value = 0
+                        string ogl_use_emissionmap = "1"
+                    }
+                }
+            )
+            float inputs:emitint (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        float default_value = 0
+                        string ogl_emit_intensity = "1"
+                    }
+                }
+            )
+            float inputs:ior (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        float default_value = 1.5
+                        string ogl_ior = "1"
+                    }
+                }
+            )
+            float inputs:metallic (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        float default_value = 0
+                        string ogl_metallic = "1"
+                    }
+                }
+            )
+            asset inputs:metallic_texture (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        asset default_value = @@
+                        string ogl_metallicmap = "1"
+                    }
+                }
+            )
+            int inputs:metallic_useTexture (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        int default_value = 0
+                        string ogl_use_metallicmap = "1"
+                    }
+                }
+            )
+            string inputs:occlusion_textureWrap (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        string default_value = "repeat"
+                        string ogl_tex_vwrap1 = "1"
+                        string ogl_tex_wrap1 = "1"
+                    }
+                }
+            )
+            asset inputs:opaccolor_texture (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        asset default_value = @@
+                        string ogl_opacitymap = "1"
+                    }
+                }
+            )
+            int inputs:opaccolor_useTexture (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        int default_value = 0
+                        string ogl_use_opacitymap = "1"
+                    }
+                }
+            )
+            float inputs:rough = 1 (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        float default_value = 0.3
+                        string ogl_rough = "1"
+                    }
+                }
+            )
+            asset inputs:rough_texture = @C:/PROGRA~1/SIDEEF~1/HOUDIN~1.403/houdini/pic/texture/bricks001_rough.rat@ (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        asset default_value = @@
+                        string ogl_roughmap = "1"
+                    }
+                }
+            )
+            int inputs:rough_useTexture = 1 (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        int default_value = 0
+                        string ogl_use_roughmap = "1"
+                    }
+                }
+            )
+            float inputs:transparency (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        float default_value = 0
+                        string ogl_transparency = "1"
+                    }
+                }
+            )
+            token outputs:surface
+        }
+
+        def Shader "Bricks_displace"
+        {
+            uniform token info:implementationSource = "sourceAsset"
+            uniform asset info:sourceAsset = @opdef:/Vop/principledshader::2.0?DisplacementVexCode@
+            int inputs:dispTex_enable = 1 (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        int default_value = 0
+                        string ogl_use_displacemap = "1"
+                    }
+                }
+            )
+            float inputs:dispTex_offset (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        float default_value = -0.5
+                        string ogl_displaceoffset = "1"
+                    }
+                }
+            )
+            float inputs:dispTex_scale = 0.01 (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        float default_value = 0.05
+                        string ogl_displacescale = "1"
+                    }
+                }
+            )
+            asset inputs:dispTex_texture = @C:/PROGRA~1/SIDEEF~1/HOUDIN~1.403/houdini/pic/texture/bricks001_height.rat@ (
+                customData = {
+                    dictionary HoudiniPreviewTags = {
+                        asset default_value = @@
+                        string ogl_displacemap = "1"
+                    }
+                }
+            )
+            token outputs:displacement
+        }
+
+        def Shader "Bricks_preview" (
+            customData = {
+                bool HoudiniIsAutoCreatedShader = 1
+            }
+        )
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            float inputs:clearcoatRoughness = 0
+            color3f inputs:diffuseColor = (1, 1, 1)
+            color3f inputs:diffuseColor.connect = </Materials/Bricks/Bricks_preview_texture_diffuseColor.outputs:rgb>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Materials/Bricks/Bricks_preview_primvar_displayOpacity.outputs:result>
+            float inputs:roughness = 1
+            float inputs:roughness.connect = </Materials/Bricks/Bricks_preview_texture_roughness.outputs:r>
+            color3f inputs:specularColor = (1, 1, 1)
+            token outputs:surface
+        }
+
+        def Shader "Bricks_preview_uv" (
+            customData = {
+                bool HoudiniIsAutoCreatedShader = 1
+            }
+        )
+        {
+            uniform token info:id = "UsdPrimvarReader_float2"
+            float2 inputs:fallback = (0, 0)
+            token inputs:varname = "st"
+            float2 outputs:result
+        }
+
+        def Shader "Bricks_preview_texture_diffuseColor" (
+            customData = {
+                bool HoudiniIsAutoCreatedShader = 1
+            }
+        )
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @C:/PROGRA~1/SIDEEF~1/HOUDIN~1.403/houdini/pic/texture/bricks001_basecolor.rat@
+            float4 inputs:scale = (1, 1, 1, 1)
+            float2 inputs:st.connect = </Materials/Bricks/Bricks_preview_uv.outputs:result>
+            token inputs:wrapS = "repeat"
+            token inputs:wrapT = "repeat"
+            color3f outputs:rgb
+        }
+
+        def Shader "Bricks_preview_texture_roughness" (
+            customData = {
+                bool HoudiniIsAutoCreatedShader = 1
+            }
+        )
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @C:/PROGRA~1/SIDEEF~1/HOUDIN~1.403/houdini/pic/texture/bricks001_rough.rat@
+            float4 inputs:scale = (1, 1, 1, 1)
+            float2 inputs:st.connect = </Materials/Bricks/Bricks_preview_uv.outputs:result>
+            token inputs:wrapS = "repeat"
+            token inputs:wrapT = "repeat"
+            float outputs:r
+        }
+
+        def Shader "Bricks_preview_primvar_displayOpacity" (
+            customData = {
+                bool HoudiniIsAutoCreatedShader = 1
+            }
+        )
+        {
+            uniform token info:id = "UsdPrimvarReader_float"
+            float inputs:fallback = 1
+            token inputs:varname = "displayOpacity"
+            float outputs:result
+        }
+    }
+}
+
+over "Geom"
+{
+    over "Cube" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Materials/Bricks>
+    }
+}
+

@@ -1,0 +1,22 @@
+#usda 1.0
+
+
+def "sphere_01"(
+    prepend references = @./inherit_a_sphere.usda@</sphere_01>
+)
+{} 
+
+def "sphere_02"(
+    prepend references = @./inherit_a_sphere.usda@</sphere_02>
+)
+{} 
+
+def "sphere_03"(
+    prepend references = @./inherit_a_sphere.usda@</sphere_03>
+)
+{}
+
+def "sphere_04"(
+    prepend references = @./inherit_a_sphere.usda@</sphere_04>
+)
+{} 

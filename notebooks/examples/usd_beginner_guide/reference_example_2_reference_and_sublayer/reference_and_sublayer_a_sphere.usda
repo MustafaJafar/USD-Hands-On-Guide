@@ -1,0 +1,34 @@
+#usda 1.0
+
+(
+    # I can't add this sublayer more that once.
+    # I can't modify the sublayer here even I can't rename it. 
+    # any modifications should be done in the original layer usd file.
+    subLayers = [
+        @./a_sphere.usda@
+    ]
+)
+
+# But I can reference it as many times. 
+# Note that my reference transform overrides the original layer transform.
+def "sphere_02"(
+    prepend references  = @./a_sphere.usda@</a_sphere>
+)
+{
+    double3 xformOp:translate = (0.0, 0.0, 2.0)
+    uniform token[] xformOpOrder = ["xformOp:translate"]
+} 
+def "sphere_03"(
+    prepend references  = @./a_sphere.usda@</a_sphere>
+)
+{
+    double3 xformOp:translate = (0.0, 0.0, 4.0)
+    uniform token[] xformOpOrder = ["xformOp:translate"]
+} 
+def "sphere_04"(
+    prepend references  = @./a_sphere.usda@</a_sphere>
+)
+{
+    double3 xformOp:translate = (0.0, 0.0, 6.0)
+    uniform token[] xformOpOrder = ["xformOp:translate"]
+} 

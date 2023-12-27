@@ -1,0 +1,11 @@
+#usda 1.0
+
+# These cubes have the same prim. 
+# So, what color will be the cube ? 
+(
+    subLayers = [
+        @./a_blue_cube.usda@,
+        @./a_red_cube.usda@
+        
+    ]
+)

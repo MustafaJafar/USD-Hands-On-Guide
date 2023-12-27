@@ -1,0 +1,8 @@
+#usda 1.0
+
+def Cube "a_cube"
+{
+    color3f[] primvars:displayColor = [(1, 0, 0)] (
+        interpolation = "constant"
+    )
+}

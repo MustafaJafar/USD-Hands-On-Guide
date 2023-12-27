@@ -1,0 +1,9 @@
+#usda 1.0
+
+def Xform "Cube_Asset" (
+    prepend references = [
+        @./geo.usda@</Cube_Asset>,  # bring contents of Cube_Asset in geo.usda
+        @./mtl.usda@</Cube_Asset>   # bring contents of Cube_Asset in mtl.usda
+    ]
+)
+{}

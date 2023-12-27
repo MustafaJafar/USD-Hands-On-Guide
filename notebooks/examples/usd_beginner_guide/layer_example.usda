@@ -1,0 +1,34 @@
+#usda 1.0
+# sphere.usda
+(
+    # Optional metadata for the layer
+    framesPerSecond = 24
+    upAxis = "Y"
+    doc = "This is sample ascii usd file"
+)
+
+def Sphere "my_sphere"(
+    # Optional metadata for the prim
+    kind = "component"
+    doc = "This is sphere with an animated attribute."
+)
+{
+    matrix4d xformOp:transform = ((1, 0, 0, 0), 
+                                  (0, 1, 0, 0), 
+                                  (0, 0, 1, 0), 
+                                  (0, 0, 0, 1))
+    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+    float primvars:test.timeSamples = {
+            1: 0.84147096,
+            2: 0.9092974,
+            3: 0.14112,
+            4: -0.7568025,
+            5: -0.9589243,
+            6: -0.2794155,
+            7: 0.6569866,
+            8: 0.98935825,
+            9: 0.4121185,
+            10: -0.5440211,
+        }
+}

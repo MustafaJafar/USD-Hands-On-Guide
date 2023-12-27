@@ -1,0 +1,12 @@
+#usda 1.0
+
+# Defining my prim class from a referenced layer.
+over "_class_RedSpherePrimClass" (
+    prepend references = @./a_sphere.usda@</a_sphere>
+)
+{
+    # Here, I can override its properties for all inherits in this file
+    color3f[] primvars:displayColor = [(0, 1, 0)] (
+        interpolation = "constant"
+    )
+}

@@ -1,0 +1,64 @@
+#usda 1.0
+(
+    defaultPrim = "My_Model"
+)
+
+def Xform "My_Model" (
+    assetInfo = {
+        asset identifier = @./my_model.usda@
+        string name = "My_Model"
+        asset thumbnail = @thumbnail-path@
+    }
+    prepend inherits = </__class__/My_Model>
+    kind = "component"
+    prepend payload = @./payload.usda@</My_Model>
+    variants = {
+        string material = "red"
+        string model = "normal"
+    }
+    prepend variantSets = ["model", "material"]
+)
+{
+    variantSet "model" = {
+        "normal" (
+            prepend apiSchemas = ["GeomModelAPI"]
+            kind = "component"
+        ) {
+            custom float3[] extentsHint = [(-1, -1, -1), (1, 1, 1)]
+
+        }
+        "short" (
+            prepend apiSchemas = ["GeomModelAPI"]
+            kind = "component"
+        ) {
+            custom float3[] extentsHint = [(-1, -0.5, -1), (1, 0.5, 1)]
+
+        }
+        "tall" (
+            prepend apiSchemas = ["GeomModelAPI"]
+            kind = "component"
+        ) {
+            custom float3[] extentsHint = [(-1, -2, -1), (1, 2, 1)]
+
+        }
+    }
+    variantSet "material" = {
+        "blue" {
+
+        }
+        "green" {
+
+        }
+        "red" {
+
+        }
+    }
+}
+
+class "__class__"
+{
+    class "My_Model"
+    {
+    }
+}
+

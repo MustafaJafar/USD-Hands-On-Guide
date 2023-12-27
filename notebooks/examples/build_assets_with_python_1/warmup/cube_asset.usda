@@ -1,0 +1,61 @@
+#usda 1.0
+
+def Xform "Cube_Asset" (
+    variants = {
+        string material = "red"
+        string model = "tall"
+    }
+    prepend variantSets = ["model", "material"]
+)
+{
+    def Scope "Geo"
+    {
+        def Cube "Cube"
+        {
+            float3 xformOp:scale
+            uniform token[] xformOpOrder = ["xformOp:scale"]
+        }
+    }
+
+    def Scope "Mtl"
+    {
+        def Material "Red"
+        {
+            token outputs:surface.connect = </Cube_Asset/Mtl/Red/RedShader.outputs:surface>
+
+            def Shader "RedShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 0, 0)
+                token outputs:surface
+            }
+        }
+    }
+    variantSet "model" = {
+        "tall" {
+            over "Geo"
+            {
+                over "Cube"
+                {
+                    float3 xformOp:scale = (1, 2, 1)
+                }
+            }
+
+        }
+    }
+    variantSet "material" = {
+        "red" {
+            over "Geo"
+            {
+                over "Cube" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Cube_Asset/Mtl/Red>
+                }
+            }
+
+        }
+    }
+}
+

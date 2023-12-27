@@ -1,0 +1,88 @@
+#usda 1.0
+
+def Xform "Cube_Asset" (
+    variants = {
+        string material = "blue"
+    }
+    prepend variantSets = "material"
+)
+{
+    def Scope "Mtl"
+    {
+        def Material "Red"
+        {
+            token outputs:surface.connect = </Cube_Asset/Mtl/Red/Red_Preview.outputs:surface>
+
+            def Shader "Red_Preview"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 0, 0)
+                token outputs:surface
+            }
+        }
+
+        def Material "Green"
+        {
+            token outputs:surface.connect = </Cube_Asset/Mtl/Green/Green_Preview.outputs:surface>
+
+            def Shader "Green_Preview"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0, 1, 0)
+                token outputs:surface
+            }
+        }
+
+        def Material "Blue"
+        {
+            token outputs:surface.connect = </Cube_Asset/Mtl/Blue/Blue_Preview.outputs:surface>
+
+            def Shader "Blue_Preview"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0, 0, 1)
+                token outputs:surface
+            }
+        }
+    }
+
+    variantSet "material" = {
+        "blue" {
+            over "Geo"
+            {
+                over "Cube" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Cube_Asset/Mtl/Blue>
+                }
+            }
+
+        }
+        "green" {
+            over "Geo"
+            {
+                over "Cube" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Cube_Asset/Mtl/Green>
+                }
+            }
+
+        }
+        "red" {
+            over "Geo"
+            {
+                over "Cube" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Cube_Asset/Mtl/Red>
+                }
+            }
+
+        }
+    }
+}
+

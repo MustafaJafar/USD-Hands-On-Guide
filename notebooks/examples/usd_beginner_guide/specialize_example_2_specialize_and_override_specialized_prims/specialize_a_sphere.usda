@@ -1,0 +1,43 @@
+#usda 1.0
+
+def "a_sphere" (
+    prepend references = @./a_sphere.usda@</a_sphere>
+)
+{
+    # Here, I can override its properties for all inherits in this file
+    color3f[] primvars:displayColor = [(1, 0, 0)] (
+        interpolation = "constant"
+    )
+}
+
+
+def "sphere_01"(
+    prepend specializes = </a_sphere> 
+)
+{} 
+# you can inherit the same Prim as much as you want.
+def "sphere_02"(
+    prepend specializes = </a_sphere>
+)
+{
+    # Here, I can override its properties for this specific inherit
+    color3f[] primvars:displayColor = [(0, 0, 1)] (
+        interpolation = "constant"
+    )
+    double3 xformOp:translate = (0.0, 0.0, 2.0)
+    uniform token[] xformOpOrder = ["xformOp:translate"]
+} 
+def "sphere_03"(
+    prepend specializes = </a_sphere>
+)
+{
+    double3 xformOp:translate = (0.0, 0.0, 4.0)
+    uniform token[] xformOpOrder = ["xformOp:translate"]
+} 
+def "sphere_04"(
+    prepend specializes = </a_sphere>
+)
+{
+    double3 xformOp:translate = (0.0, 0.0, 6.0)
+    uniform token[] xformOpOrder = ["xformOp:translate"]
+}

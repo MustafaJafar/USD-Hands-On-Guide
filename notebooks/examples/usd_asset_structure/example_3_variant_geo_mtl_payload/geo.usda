@@ -1,0 +1,50 @@
+#usda 1.0
+
+def Xform "Cube_Asset" (
+    variants = {
+        string model = "normal"
+    }
+    prepend variantSets = "model"
+)
+{
+    def Scope "Geo"
+    {
+        def Cube "Cube"
+        {
+            float3 xformOp:scale
+            uniform token[] xformOpOrder = ["xformOp:scale"]
+        }
+    }
+    variantSet "model" = {
+        "normal" {
+            over "Geo"
+            {
+                over "Cube"
+                {
+                    float3 xformOp:scale = (1, 1, 1)
+                }
+            }
+
+        }
+        "short" {
+            over "Geo"
+            {
+                over "Cube"
+                {
+                    float3 xformOp:scale = (1, 0.5, 1)
+                }
+            }
+
+        }
+        "tall" {
+            over "Geo"
+            {
+                over "Cube"
+                {
+                    float3 xformOp:scale = (1, 2, 1)
+                }
+            }
+
+        }
+    }
+}
